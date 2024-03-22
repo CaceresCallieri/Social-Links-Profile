@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+:root {
+  font-family: "Anonymous Pro", monospace;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+*::-moz-selection {
+  background-color: #FF9999;
+  color: #141414;
+}
+*::selection {
+  background-color: #FF9999;
+  color: #141414;
+}
+
+#app {
+  display: grid;
+  place-items: center;
+  height: 100svh;
+  background-color: #141414;
+}
+#app main {
+  width: 384px;
+  background-color: #1D1D1D;
+  padding: 2rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  animation: blurIn 0.3s ease-in-out;
+}
+#app main img {
+  height: 88px;
+  width: 88px;
+  border-radius: 50%;
+  outline: 1.5px solid #FF9999;
+}
+#app main .name-and-location {
+  text-align: center;
+}
+#app main .name-and-location h1 {
+  font-size: 1.5rem;
+}
+#app main .name-and-location p {
+  font-size: 1rem;
+  color: #FF9999;
+}
+#app main .links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  margin-top: 1rem;
+}
+#app main .links a {
+  text-align: center;
+  width: 100%;
+  background-color: #222222;
+  color: #FFFFFF;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  transition-property: background-color, color;
+  transition: 0.3s ease-in-out;
+}
+#app main .links a:hover {
+  background-color: #FF9999;
+  color: #141414;
+}
+#app main .links a:active {
+  transform: scale(0.95);
+}
+
+@media (width <= 400px) {
+  #app main {
+    width: 95%;
+  }
+}
+@keyframes blurIn {
+  from {
+    filter: blur(5px);
+  }
+  to {
+    filter: blur(0px);
+  }
+}/*# sourceMappingURL=app.css.map */

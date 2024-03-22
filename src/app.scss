@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+$color-black: #141414;
+$color-dark-grey: #1D1D1D;
+$color-grey: #222222;
+$color-white: #FFFFFF;
+$color-salmon: #FF9999;
+
+:root {
+  font-family: "Anonymous Pro", monospace;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+  &::selection {
+    background-color: $color-salmon;
+    color: $color-black;
+  }
+}
+
+#app {
+  display: grid;
+  place-items: center;
+  height: 100svh;
+  background-color: $color-black;
+
+  main {
+    width: 384px;
+    background-color: $color-dark-grey;
+    padding: 2rem;
+    border-radius: 1rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1  );
+
+    animation: blurIn 0.3s ease-in-out;
+
+    img {
+      height: 88px;
+      width: 88px;
+      border-radius: 50%;
+      outline: 1.5px solid $color-salmon;
+    }
+
+    .name-and-location {
+      text-align: center;
+
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      p {
+        font-size: 1rem;
+        color: $color-salmon;
+      }
+    } 
+
+    .links {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      width: 100%;
+      margin-top: 1rem;
+
+      a {
+        text-align: center;
+        width: 100%;
+        background-color: $color-grey;
+        color: $color-white;
+        font-weight: 700;
+        text-decoration: none;
+        padding: 0.75rem;
+        border-radius: 0.5rem;
+
+        transition-property: background-color, color;
+        transition: 0.3s ease-in-out;
+
+        &:hover {
+          background-color: $color-salmon;
+          color: $color-black;
+        }
+
+        &:active {
+          transform: scale(0.95);
+        }
+
+      }
+    }
+  }
+}
+
+@media (width <= 400px) {
+  #app {
+    main {
+      width: 95%;
+  
+    }
+
+  }
+}
+
+@keyframes blurIn {
+  from {
+    filter: blur(5px);
+  }
+  to {
+    filter: blur(0px);
+  }
+}
