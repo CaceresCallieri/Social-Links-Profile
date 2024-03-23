@@ -1,7 +1,7 @@
 <script>
     import "./app.css";
     import profilePic from "./assets/ProfilePic.jpg";
-    import Link from "./components/Link.svelte";
+    import Link from "./lib/Link.svelte";
 
     let texts = [
         "Software Developer",
